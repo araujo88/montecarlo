@@ -36,8 +36,6 @@ plt.plot(future_dates, price_paths)
 plt.ylabel("Close price (BTC/USDT)")
 plt.show()
 
-#plt.hist(price_paths[-1,:], bins = 20)
-#sns.set_style('darkgrid')
 sns.histplot(price_paths[-1,:], bins = 20, stat = "frequency")
 plt.xlabel("Close price (BTC/USDT)")
 plt.ylabel("Frequency")
