@@ -6,26 +6,20 @@ import seaborn as sns
 from scipy.stats import norm
 import datetime
 
-ticker = 'BTC'
 file = pd.read_csv("BTC.csv", parse_dates=True)
 date = pd.to_datetime(file.time)
 data = file.close
 #plt.plot(date, data)
 #plt.show()
 
-#log_returns = np.log(1 + data.pct_change())
-#sns.distplot(log_returns.iloc[1:])
-#plt.xlabel("Daily Return")
-#plt.ylabel("Frequency")
-#plt.show()
-
+log_returns = np.log(1 + data.pct_change())
 u = log_returns.mean()
 var = log_returns.var()
 drift = u - (0.5*var)
 
 stdev = log_returns.std()
-days = 30
-iterations = 10000
+days = 30 # 1 month prediction
+iterations = 100
 Z = norm.ppf(np.random.rand(days, iterations))
 daily_returns = np.exp(drift + stdev * Z)
 
