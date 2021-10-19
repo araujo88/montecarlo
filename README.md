@@ -1,7 +1,7 @@
 # montecarlo
 
 Monte Carlo simulations are a powerful in numerous fields, including operations research, game theory, physics, mathematics, actuarial sciences, finance, among others. It is a technique used to measure risk and uncertainty when making a decision. To put it simple: a Monte Carlo simulation runs an enormous number of statistical experiments with random numbers generated from an underlying distribution based on a given time series. Brownian motion, or random walk, is the main driver for forecasting the future price.
-On this README file, I will present some results for Bitcoin close price prediction one week from now, including convergence tests for the number of simulations as well as sensitivity analysis for the historical data sample range. All code was written in Python and will be provided at the end of this article.
+On this README file, I will present some results for Bitcoin close price prediction one week from now, including convergence tests for the number of simulations as well as sensitivity analysis for the historical data sample range.
 
 ## Method
 The method consist in obtaining a mean and standard deviation from a given sample data (time series), on this particular case the close price data of Bitcoin from a certain time range. For this article, I will be working with the daily close price.
